@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Win-Web-InvestPro</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="logo.svg" alt="InvestPro Logo" />
+      <span>InvestPro</span>
+    </div>
+    <nav>
+      <ul>
+        <li class="active" data-target="dashboard">Dashboard</li>
+        <li data-target="portfolio">Portfolio</li>
+        <li data-target="markets">Markets</li>
+        <li data-target="analytics">Analytics</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <!-- Dashboard Panel -->
+    <section id="dashboard" class="panel active">
+      <h1>Welcome Back, Aman</h1>
+      <div class="card grid-2">
+        <div>
+          <h2>Portfolio Growth</h2>
+          <canvas id="growthChart"></canvas>
+        </div>
+        <div>
+          <h2>F&amp;O Trading</h2>
+          <canvas id="foChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Panel -->
+    <section id="portfolio" class="panel">
+      <h1>Your Portfolio</h1>
+      <div class="card grid-2">
+        <div>
+          <h2>Holdings Breakdown</h2>
+          <canvas id="allocChart"></canvas>
+        </div>
+        <div>
+          <h2>Position Details</h2>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody id="holdingsTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Markets Panel -->
+    <section id="markets" class="panel">
+      <h1>Market Overview</h1>
+      <div class="card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Last</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody id="marketsTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Analytics Panel -->
+    <section id="analytics" class="panel">
+      <h1>Analytics</h1>
+      <div class="card grid-3 stats">
+        <div>
+          <h3>Total ROI</h3>
+          <p id="statROI"></p>
+        </div>
+        <div>
+          <h3>Volatility</h3>
+          <p id="statVolatility"></p>
+        </div>
+        <div>
+          <h3>Max Drawdown</h3>
+          <p id="statDrawdown"></p>
+        </div>
+      </div>
+      <div class="card">
+        <h2>AI Insights</h2>
+        <ul id="insightsList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="chart.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
